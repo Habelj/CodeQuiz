@@ -3,6 +3,18 @@ const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
+var timer = document.querySelector('#timer')
+var totaltime = 75
+function starttimer() {
+const gameclock = setInterval(()=> {
+    totaltime --;
+    timer.textContent = totaltime
+    console.log ('test')
+    if(totaltime <= 0) {
+        clearInterval(gameclock)
+    }
+}, 1000)
+}
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -53,12 +65,13 @@ startGame = () => {
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
+    starttimer()
 }
 
 getNewQuestion = () =>{
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
-        return window.location.assign('/end.html')
+        return window.location.assign('end.html')
     }
 
     questionCounter++
