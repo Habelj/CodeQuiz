@@ -66,6 +66,7 @@ body {
     width: 0%;
 }
 
+
 @media screen and (maxwidth: 768px) {
     .choice-container {
         min-width: 40rem;
