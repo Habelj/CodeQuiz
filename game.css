@@ -32,6 +32,9 @@ body {
 .correct {
     background: linear-gradient(32deg, green) 0%, green 100%;
 }
+.timer{
+    font-size: 38px ;
+}
 
 .incorrect {
     background: linear-gradient(32deg, red) 0%, red 100%;
